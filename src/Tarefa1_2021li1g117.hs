@@ -15,7 +15,8 @@ module Tarefa1_2021li1g117 where
 import LI12122
 
 validaPotencialMapa :: [(Peca, Coordenadas)] -> Bool
-validaPotencialMapa pecas = undefined
+validaPotencialMapa [] = False 
+validaPotencialMapa ((x , (y , z)) : a) = (validaUmaPosicao ((x , (y , z)) : a)) && (validaUmaPorta ((x , (y , z)) : a)) && (validaCaixa ((x , (y , z)) : a)) && (validaVazios ((x , (y , z)) : a)) && (validaChao ((x , (y , z)) : a))
 
 
 --1. Não haver mais do que uma declaração de peça para a mesma posição.
@@ -48,35 +49,35 @@ validaCaixa :: [(Peca, Coordenadas)] -> Bool
 validaCaixa [] = True 
 validaCaixa ((x , (y , z)) : a)
     | x == Caixa = (if (Caixa , (y , z + 1)) `elem` a || (Bloco , (y , z + 1)) `elem` a then validaCaixa a else False) 
-    | otherwise validaCaixa a
+    | otherwise = validaCaixa a
 
 --4. Devem existir espaços vazios (no mínimo um), i.e. o mapa não pode
 --   estar totalmente preenchido por caixas, blocos e porta.
 
-validaVazios :: [(Peca, Cooordenadas)] -> Bool
+validaVazios :: [(Peca, Coordenadas)] -> Bool
 validaVazios [] = True
 validaVazios ((x , (y,z)) : a)
     | quantosVazios ((x , (y,z)) : a) >= 1 = True 
     | otherwise = False 
 
-quantosVazios :: [(Peca, Cooordenadas)] -> Int 
+quantosVazios :: [(Peca, Coordenadas)] -> Int 
 quantosVazios [] = 0
-quantosVazios ((x , (y,z)) : a) = (xMaximo ((x , (y,z)) : a) 0 ) * (yMaximo ((x , (y,z)) : a) 0 ) - caixasBlocosPortas ((x , (y,z)) : a)
+quantosVazios ((x , (y,z)) : a) = ((xMaximo ((x , (y,z)) : a) 0 ) + 1) * ((yMaximo ((x , (y,z)) : a) 0 ) + 1) - caixasBlocosPortas ((x , (y,z)) : a)
 
-caixasBlocosPortas :: [(Peca, Cooordenadas)] -> Int 
+caixasBlocosPortas :: [(Peca, Coordenadas)] -> Int 
 caixasBlocosPortas [] = 0
 caixasBlocosPortas ((x , (y,z)) : a) = if x == Caixa || x == Bloco || x == Porta then 1 + caixasBlocosPortas a else caixasBlocosPortas a
 
 
-xMaximo :: [(Peca, Cooordenadas)] -> Int -> Int
-xMAximo [] b = b
-xMAximo ((x , (y,z)) : a) b
+xMaximo :: [(Peca, Coordenadas)] -> Int -> Int
+xMaximo [] b = b
+xMaximo ((x , (y,z)) : a) b
     | b >= y = xMaximo a b
     | otherwise = xMAximo a y
 
-yMaximo :: [(Peca, Cooordenadas)] -> Int -> Int
-yMAximo [] b = b
-yMAximo ((x , (y,z)) : a) b
+yMaximo :: [(Peca, Coordenadas)] -> Int -> Int
+yMaximo [] b = b
+yMaximo ((x , (y,z)) : a) b
     | b >= z = xMaximo a b
     | otherwise = xMAximo a z
 
@@ -84,8 +85,11 @@ yMAximo ((x , (y,z)) : a) b
 --5. A base do mapa deve ser composta por blocos, i.e. deve existir um
 --   chão ao longo do mapa.
 
-listaCoordenadas :: [(Peca, Cooordenadas)]-> [(Int,Int)]
-listaCoordenadas [] = []
-listaCoordenadas ((Peca , (y,z)) : a) = (y,z) : listaCoordenadas a
+
+validaChao :: [(Peca, Coordenadas)] -> Bool
+validaChao [] = True 
+validaChao ((x , (y , z)) : a)
+    | z == (yMaximo ((x , (y , z)) : a) 0) = (if x == Bloco then validaChao a else False)
+    | otherwise = validaChao a
 
 
