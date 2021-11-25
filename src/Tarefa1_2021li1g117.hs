@@ -73,13 +73,13 @@ xMaximo :: [(Peca, Coordenadas)] -> Int -> Int
 xMaximo [] b = b
 xMaximo ((x , (y,z)) : a) b
     | b >= y = xMaximo a b
-    | otherwise = xMAximo a y
+    | otherwise = xMaximo a y
 
 yMaximo :: [(Peca, Coordenadas)] -> Int -> Int
 yMaximo [] b = b
 yMaximo ((x , (y,z)) : a) b
     | b >= z = xMaximo a b
-    | otherwise = xMAximo a z
+    | otherwise = xMaximo a z
 
 
 --5. A base do mapa deve ser composta por blocos, i.e. deve existir um
