@@ -1,5 +1,8 @@
+
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 {-# OPTIONS_GHC -Wno-deferred-out-of-scope-variables #-}
+
+
 {- |
 Module      : Tarefa1_2021li1g117
 Description : Validação de um potencial mapa
@@ -13,6 +16,7 @@ import LI12122
 
 validaPotencialMapa :: [(Peca, Coordenadas)] -> Bool
 validaPotencialMapa pecas = undefined
+
 
 --1. Não haver mais do que uma declaração de peça para a mesma posição.
 
@@ -83,4 +87,5 @@ yMAximo ((x , (y,z)) : a) b
 listaCoordenadas :: [(Peca, Cooordenadas)]-> [(Int,Int)]
 listaCoordenadas [] = []
 listaCoordenadas ((Peca , (y,z)) : a) = (y,z) : listaCoordenadas a
+
 
