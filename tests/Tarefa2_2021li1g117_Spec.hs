@@ -16,3 +16,11 @@ testsT2 =
     , "Tarefa 2 - Teste Identidade m1r" ~: m1r ~=?  constroiMapa (desconstroiMapa m1r)
     , "Tarefa 2 - Teste Construir Sobrepor Peças" ~: constroiMapa [(Porta, (7, 4))] ~=?  constroiMapa [(Porta, (7, 4)), (Porta, (7, 4))]
     ]
+
+
+constroiMapa [] = []
+
+sort (desconstroiMapa m1r) =[(Bloco,(0,4)),(Bloco,(1,4)),(Bloco,(2,4)),(Bloco,(3,4)),(Bloco,(4,4)),(Bloco,(5,4)),(Bloco,(6,1)),(Bloco,(6,2)),(Bloco,(6,3)),(Bloco,(6,4)),(Caixa,(4,3)),(Porta,(0,3))]
+
+desconstroiMapa [] = []
+
