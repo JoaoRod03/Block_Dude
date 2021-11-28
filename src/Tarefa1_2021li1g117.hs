@@ -78,8 +78,8 @@ xMaximo ((x , (y,z)) : a) b
 yMaximo :: [(Peca, Coordenadas)] -> Int -> Int
 yMaximo [] b = b
 yMaximo ((x , (y,z)) : a) b
-    | b >= z = xMaximo a b
-    | otherwise = xMaximo a z
+    | b >= z = yMaximo a b
+    | otherwise = yMaximo a z
 
 
 --5. A base do mapa deve ser composta por blocos, i.e. deve existir um
