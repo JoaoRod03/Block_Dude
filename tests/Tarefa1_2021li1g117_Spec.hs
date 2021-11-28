@@ -4,6 +4,7 @@ import Test.HUnit
 import LI12122
 import Tarefa1_2021li1g117
 import Fixtures
+import Data.Bool (Bool(False, True))
 
 -- Tarefa 1
 testsT1 =
@@ -12,3 +13,16 @@ testsT1 =
     , "Tarefa 1 - Teste Valida Mapa vazio" ~: validaPotencialMapa [] ~=? False
     , "Tarefa 1 - Teste Valida Mapa com 2 portas" ~: validaPotencialMapa [(Porta, (0,0)), (Porta, (1,0))] ~=?  False
     ]
+
+
+
+validaPotencialMapa [] = False
+
+validaPotencialMapa [(Porta, (0,0)), (Porta, (1,0))] = False
+
+validaPotencialMapa [(Caixa,(1,3)),(Bloco,(1,4))] = False
+
+
+validaPotencialMapa [(Porta, (0, 2)),(Bloco, (0, 3)), (Bloco, (1, 3)), (Bloco, (2, 3))] = True
+
+
