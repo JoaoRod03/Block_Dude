@@ -20,11 +20,20 @@ constroiMapa :: [(Peca,Coordenadas)] -> Mapa
 constroiMapa [] = []
 constroiMapa ((x , (y , z)) : a) = constroiMapaAux ((x , (y , z)) : a) (yMaximo ((x , (y , z)) : a) 0)
 
+constroiMapaAux :: [(Peca,Coordenadas)] -> Int -> Mapa
+constroiMapaAux [] b = []
+constroiMapaAux ((x , (y , z)) : a) b 
+  | b >= 0 = constroiMapaAux ((x , (y , z)) : a) (b-1) ++ [listaPecas (compararCoordenadas  (vaziosParaComparar (xMaximo ((x , (y , z)) : a) 0) b) (linhaPorNumero (ordenarCoordenadas ((x , (y , z)) : a)) b))]
+  | otherwise = []
+
 
 desconstroiMapa :: Mapa -> [(Peca, Coordenadas)]
 desconstroiMapa [] = []
 desconstroiMapa (x : y) = desconstroiMapaAux (x : y) 0
 
+desconstroiMapaAux :: Mapa -> Int -> [(Peca,Coordenadas)]
+desconstroiMapaAux [] _ = []
+desconstroiMapaAux (x : y) a = ordenarCoordenadas ((desconstroiLinha x 0 a) ++ (desconstroiMapaAux y (a + 1)))
 
 --funções auxiliares
 
@@ -60,17 +69,10 @@ compararCoordenadas  ((x , (y , z)) : t) ((a , (b , c)) : d)
 
 
 --[ (Porta, (0, 3)),(Bloco, (0, 4)), (Bloco, (1, 4)),(Bloco, (2, 4)),(Bloco, (3, 4)),(Bloco, (4, 4)),(Caixa, (4, 3)),(Bloco, (5, 4)),(Bloco, (6, 4)),(Bloco, (6, 3)),(Bloco, (6, 2)),(Bloco, (6, 1))]
-constroiMapaAux :: [(Peca,Coordenadas)] -> Int -> Mapa
-constroiMapaAux [] b = []
-constroiMapaAux ((x , (y , z)) : a) b 
-  | b >= 0 = constroiMapaAux ((x , (y , z)) : a) (b-1) ++ [listaPecas (compararCoordenadas  (vaziosParaComparar (xMaximo ((x , (y , z)) : a) 0) b) (linhaPorNumero (ordenarCoordenadas ((x , (y , z)) : a)) b))]
-  | otherwise = []
+
 
 desconstroiLinha :: [Peca] -> Int -> Int -> [(Peca,Coordenadas)]
 desconstroiLinha [] x y= []
 desconstroiLinha (Vazio : a) x y = desconstroiLinha a (x + 1) y
 desconstroiLinha (x : y) a b = (x , (a , b)) : desconstroiLinha y (a + 1) b
 
-desconstroiMapaAux :: Mapa -> Int -> [(Peca,Coordenadas)]
-desconstroiMapaAux [] _ = []
-desconstroiMapaAux (x : y) a = ordenarCoordenadas ((desconstroiLinha x 0 a) ++ (desconstroiMapaAux y (a + 1)))
