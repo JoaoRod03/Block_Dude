@@ -18,7 +18,7 @@ jogoFinal :: Jogo -> String
 jogoFinal (Jogo l (Jogador (a , b) c d)) = jogoFinalAux l (Jogador (a , b) c d)
 
 jogoFinalAux :: Mapa -> Jogador -> String
-jogoFinalAux l (Jogador (a , b) c d) = juntarStrings (map stringLetra (jogadorMapa (mapaString l) (Jogador (a , b) c d)) )
+jogoFinalAux l (Jogador (a , b) c d) = juntarStrings (map stringLetra (existeCaixa (jogadorMapa (mapaString l) (Jogador (a , b) c d)) (Jogador (a , b) c d)) )
 
 -- Passar tudo para os caracteres pretendidos
 
@@ -60,3 +60,22 @@ jogadorLinha (x : y) (Jogador (a , b) c d)
   | a == 0 = if c == Este then "JogadorEste" : y else "JogadorOeste" : y
   | otherwise = x : jogadorLinha y (Jogador (a - 1 , b) c d)
 
+-- Colocar caixa caso haja
+
+existeCaixa :: [[String]] -> Jogador -> [[String]]
+existeCaixa [] _ = []
+existeCaixa (x : y) (Jogador (a , b) c d)
+  | d == False = (x : y)
+  | otherwise = caixaMapa (x : y) (Jogador (a , b) c d)
+
+caixaMapa :: [[String]] -> Jogador ->  [[String]]
+caixaMapa [] _ = []
+caixaMapa (x : y) (Jogador (a , b) c d)
+  | b - 1 == 0 = (caixaLinha x (Jogador (a , b) c d)) : y
+  | otherwise = x : caixaMapa y (Jogador (a , b - 1) c d)
+
+caixaLinha :: [String] -> Jogador -> [String]
+caixaLinha [] _ = []
+caixaLinha (x : y) (Jogador (a , b) c d)
+  | a == 0 = "Caixa" : y
+  | otherwise = x : caixaLinha y (Jogador (a - 1 , b) c d)
