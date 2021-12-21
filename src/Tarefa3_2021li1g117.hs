@@ -9,20 +9,54 @@ Módulo para a realização da Tarefa 3 do projeto de LI1 em 2021/22.
 module Tarefa3_2021li1g117 where
 
 import LI12122
+import Data.Time.Format.ISO8601 (yearFormat)
 
 instance Show Jogo where
-  show = undefined
+  show = jogoFinal
 
-mapaString :: Mapa -> String
-mapaString l = juntarStrings (map linhaMapaString l) 
-  where linhaMapaString :: [Peca]  -> String
-        linhaMapaString [] = ""
-        linhaMapaString (x : y)
-          | x == Caixa = "C" ++ linhaMapaString y
-          | x == Bloco = "X" ++ linhaMapaString y 
-          | x == Porta = "P" ++ linhaMapaString y 
-          | otherwise = " " ++ linhaMapaString y 
+jogoFinal :: Jogo -> String 
+jogoFinal (Jogo l (Jogador (a , b) c d)) = jogoFinalAux l (Jogador (a , b) c d)
+
+jogoFinalAux :: Mapa -> Jogador -> String
+jogoFinalAux l (Jogador (a , b) c d) = juntarStrings (map stringLetra (jogadorMapa (mapaString l) (Jogador (a , b) c d)) )
+
+-- Passar tudo para os caracteres pretendidos
+
+stringLetra :: [String]  -> String
+stringLetra [] = ""
+stringLetra (x : y)
+  | x == "Caixa" = "C" ++ stringLetra y
+  | x == "Bloco" = "X" ++ stringLetra y
+  | x == "Porta" = "P" ++ stringLetra y
+  | x == "Vazio" = " " ++ stringLetra y
+  | x == "JogadorEste" = ">" ++ stringLetra y
+  | otherwise = "<" ++ stringLetra y
 
 juntarStrings :: [String] -> String
 juntarStrings [] = ""
-juntarStrings (x : y) = x ++ juntarStrings y 
+juntarStrings (x : y) = x ++ "\n" ++ juntarStrings y
+
+-- Passar o mapa todo para String 
+
+mapaString :: Mapa -> [[String]]
+mapaString [] = []
+mapaString (x : y) = linhaString x : mapaString y
+
+linhaString :: [Peca] -> [String]
+linhaString [] = []
+linhaString (x : y) = show x : linhaString y
+
+-- Colocar o jogador no mapa
+
+jogadorMapa :: [[String]] -> Jogador -> [[String]]
+jogadorMapa [] _ = []
+jogarMapa (x : y) (Jogador (a , b) c d)
+  | b == 0 = (jogadorLinha x (Jogador (a , b) c d)) : y
+  | otherwise = x : jogadorMapa y (Jogador (a , b - 1) c d)
+
+jogadorLinha :: [String] -> Jogador -> [String]
+jogadorLinha [] _ = []
+jogadorLinha (x : y) (Jogador (a , b) c d)
+  | a == 0 = if c == Este then "JogadorEste" : y else "JogadorOeste" : y
+  | otherwise = x : jogadorLinha y (Jogador (a - 1 , b) c d)
+
