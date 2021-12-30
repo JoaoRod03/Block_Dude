@@ -57,7 +57,10 @@ jogarMapa (x : y) (Jogador (a , b) c d)
 jogadorLinha :: [String] -> Jogador -> [String]
 jogadorLinha [] _ = []
 jogadorLinha (x : y) (Jogador (a , b) c d)
-  | a == 0 = if c == Este then "JogadorEste" : y else "JogadorOeste" : y
+  | a == 0 = 
+    if c == Este 
+    then "JogadorEste" : y 
+    else "JogadorOeste" : y
   | otherwise = x : jogadorLinha y (Jogador (a - 1 , b) c d)
 
 -- Colocar caixa caso haja
