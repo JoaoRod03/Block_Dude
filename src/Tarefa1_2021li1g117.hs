@@ -16,7 +16,11 @@ import LI12122
 
 validaPotencialMapa :: [(Peca, Coordenadas)] -> Bool
 validaPotencialMapa [] = False 
-validaPotencialMapa ((x , (y , z)) : a) = (validaUmaPosicao ((x , (y , z)) : a)) && (validaUmaPorta ((x , (y , z)) : a)) && (validaCaixa ((x , (y , z)) : a)) && (validaVazios ((x , (y , z)) : a)) && (validaChao ((x , (y , z)) : a))
+validaPotencialMapa ((x , (y , z)) : a) = (validaUmaPosicao ((x , (y , z)) : a)) 
+                                        && (validaUmaPorta ((x , (y , z)) : a)) 
+                                        && (validaCaixa ((x , (y , z)) : a)) 
+                                        && (validaVazios ((x , (y , z)) : a)) 
+                                        && (validaChao ((x , (y , z)) : a))
 
 
 --1. Não haver mais do que uma declaração de peça para a mesma posição.
@@ -48,7 +52,9 @@ portas ((x ,(y , z)) : a)
 validaCaixa :: [(Peca, Coordenadas)] -> Bool
 validaCaixa [] = True 
 validaCaixa ((x , (y , z)) : a)
-    | x == Caixa = (if (Caixa , (y , z + 1)) `elem` a || (Bloco , (y , z + 1)) `elem` a then validaCaixa a else False) 
+    | x == Caixa =  if (Caixa , (y , z + 1)) `elem` a || (Bloco , (y , z + 1)) `elem` a 
+                    then validaCaixa a 
+                    else False 
     | otherwise = validaCaixa a
 
 --4. Devem existir espaços vazios (no mínimo um), i.e. o mapa não pode
@@ -66,7 +72,9 @@ quantosVazios ((x , (y,z)) : a) = ((xMaximo ((x , (y,z)) : a) 0 ) + 1) * ((yMaxi
 
 caixasBlocosPortas :: [(Peca, Coordenadas)] -> Int 
 caixasBlocosPortas [] = 0
-caixasBlocosPortas ((x , (y,z)) : a) = if x == Caixa || x == Bloco || x == Porta then 1 + caixasBlocosPortas a else caixasBlocosPortas a
+caixasBlocosPortas ((x , (y,z)) : a) = if x == Caixa || x == Bloco || x == Porta 
+                                        then 1 + caixasBlocosPortas a 
+                                        else caixasBlocosPortas a
 
 
 xMaximo :: [(Peca, Coordenadas)] -> Int -> Int
@@ -89,7 +97,10 @@ yMaximo ((x , (y,z)) : a) b
 validaChao :: [(Peca, Coordenadas)] -> Bool
 validaChao [] = True 
 validaChao ((x , (y , z)) : a)
-    | z == (yMaximo ((x , (y , z)) : a) 0) = (if x == Bloco then validaChao a else False)
+    | z == (yMaximo ((x , (y , z)) : a) 0) = 
+        if x == Bloco 
+        then validaChao a 
+        else False
     | otherwise = validaChao a
 
 
