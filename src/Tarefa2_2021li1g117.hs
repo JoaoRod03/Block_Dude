@@ -18,12 +18,13 @@ import Tarefa1_2021li1g117 (yMaximo, xMaximo)
 
 constroiMapa :: [(Peca,Coordenadas)] -> Mapa
 constroiMapa [] = []
-constroiMapa ((x , (y , z)) : a) = constroiMapaAux ((x , (y , z)) : a) (yMaximo ((x , (y , z)) : a) 0)
+constroiMapa ((x , (y , z)) : a) = constroiMapaAux ((x , (y , z)) : a) 
 
-constroiMapaAux :: [(Peca,Coordenadas)] -> Int -> Mapa
-constroiMapaAux [] b = []
-constroiMapaAux ((x , (y , z)) : a) b 
-  | b >= 0 = constroiMapaAux ((x , (y , z)) : a) (b-1) ++ [listaPecas (compararCoordenadas  (vaziosParaComparar (xMaximo ((x , (y , z)) : a) 0) b) (linhaPorNumero (ordenarCoordenadas ((x , (y , z)) : a)) b))]
+constroiMapaAux :: [(Peca,Coordenadas)] -> Mapa
+constroiMapaAux [] = []
+constroiMapaAux ((x , (y , z)) : a) 
+  | b >= 0 = constroiMapaAux ((x , (y , z)) : a) ++ 
+    [listaPecas (compararCoordenadas  (vaziosParaComparar (xMaximo ((x , (y , z)) : a) 0) (yMaximo ((x , (y , z)) : a) 0)) (linhaPorNumero (ordenarCoordenadas ((x , (y , z)) : a)) (yMaximo ((x , (y , z)) : a) 0)))]
   | otherwise = []
 
 
