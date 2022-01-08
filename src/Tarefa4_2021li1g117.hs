@@ -24,7 +24,7 @@ moveJogador :: Jogo -> Movimento -> Jogo
 moveJogador (Jogo l (Jogador (a , b) c d)) AndarEsquerda = andarEsquerda (Jogo l (Jogador (a , b) c d))
 moveJogador (Jogo l (Jogador (a , b) c d)) AndarDireita = andarDireita (Jogo l (Jogador (a , b) c d))
 moveJogador (Jogo l (Jogador (a , b) c d)) Trepar = treparPeca (Jogo l (Jogador (a , b) c d))
-
+moveJogador (Jogo l (Jogador (a , b) c d)) InterageCaixa = interagirCaixa (Jogo l (Jogador (a , b) c d))
 
 --Funcao para definir onde o jogador cai
 
