@@ -17,9 +17,7 @@ resolveJogo movimentos (Jogo l (Jogador (a , b) c d))
                     where q = (sortOn length tentativasBemSucedidas)
                           tentativasBemSucedidas = filter verificarChegadaFinal (testaTentativas movimentos (Jogo l (Jogador (a,b) c d)))
 
---tentativasBemSucedidas :: Int -> Jogo -> [Jogo]
---tentativasBemSucedidas x (Jogo m (Jogador (a,b) c d)) = filter verificarChegadaFinal (testaTentativas x (Jogo m (Jogador (a,b) c d)))
---tentativa de simplificar mal sucedida 
+
 
 --descobre qual o movimento ocorrido entre dois jogos
 
