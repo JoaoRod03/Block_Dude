@@ -1,6 +1,5 @@
 
-{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-{-# OPTIONS_GHC -Wno-deferred-out-of-scope-variables #-}
+
 
 
 {- |
