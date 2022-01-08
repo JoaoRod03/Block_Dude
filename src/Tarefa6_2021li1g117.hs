@@ -11,16 +11,15 @@ import Data.List (sortOn)
 --função final
 
 resolveJogo :: Int -> Jogo -> Maybe [Movimento]
-resolveJogo movimentos (Jogo l (Jogador (a , b) c d)) = 
-    if length tentativasBemSucedidas == 0 
-    then Nothing 
-    else Just (quaisOsMovimentos (head q))
-        where q = (sortOn length tentativasBemSucedidas)
-              tentativasBemSucedidas = filter verificarChegadaFinal (testaTentativas movimentos (Jogo l (Jogador (a,b) c d)))
+resolveJogo movimentos (Jogo l (Jogador (a , b) c d))
+    | length tentativasBemSucedidas == 0 = Nothing 
+    | otherwise = Just (quaisOsMovimentos (head q))
+                    where q = (sortOn length tentativasBemSucedidas)
+                          tentativasBemSucedidas = filter verificarChegadaFinal (testaTentativas movimentos (Jogo l (Jogador (a,b) c d)))
 
 --tentativasBemSucedidas :: Int -> Jogo -> [Jogo]
 --tentativasBemSucedidas x (Jogo m (Jogador (a,b) c d)) = filter verificarChegadaFinal (testaTentativas x (Jogo m (Jogador (a,b) c d)))
-
+--tentativa de simplificar mal sucedida 
 
 --descobre qual o movimento ocorrido entre dois jogos
 
@@ -60,8 +59,13 @@ coordenadasPortaAux ((x , (y , z)) : a)
     | otherwise = coordenadasPortaAux a
 
 
+--cria e testa possíveis tentativas conforme os movimentos
+
 criaTentativas :: Jogo -> [Jogo] 
-criaTentativas = criaTentativasAux [AndarEsquerda, AndarDireita, Trepar, InterageCaixa]
+criaTentativas = criaTentativasAux [AndarEsquerda, 
+                                    AndarDireita,  
+                                    Trepar, 
+                                    InterageCaixa]
     
 criaTentativasAux :: [Movimento] -> Jogo -> [Jogo]
 criaTentativasAux [] _ = []
@@ -71,10 +75,11 @@ criaTentativasAux (x : y) (Jogo l (Jogador (a,b) c d)) =
         else criaTentativasAux y (Jogo l (Jogador (a,b) c d))
             where z = moveJogador (Jogo l (Jogador (a,b) c d)) x 
 
---
+
 
 testaTentativas :: Int -> Jogo -> [[Jogo]]
-testaTentativas movimentos (Jogo l (Jogador (a,b) c d))
-    | movimentos <= 0 = [[(Jogo l (Jogador (a,b) c d))]]
-    | otherwise = [(Jogo l (Jogador (a,b) c d))] : map ((Jogo l (Jogador (a,b) c d)) :) (concatMap (testaTentativas (movimentos - 1)) (criaTentativas (Jogo l (Jogador (a,b) c d))))
-
+testaTentativas movimentos (Jogo l (Jogador (a,b) c d)) =
+    if movimentos <= 0 
+    then [[(Jogo l (Jogador (a,b) c d))]] ------ caso nao seja possivel retorna a lista com o jogo inicial
+    else  [(Jogo l (Jogador (a,b) c d))] : map ((Jogo l (Jogador (a,b) c d)) :) (concatMap (testaTentativas (movimentos - 1)) (criaTentativas (Jogo l (Jogador (a,b) c d))))
+--listas compostas do jogo inicial e dos jogos que vao leva-lo à vitoria 
