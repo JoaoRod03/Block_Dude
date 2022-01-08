@@ -1,4 +1,4 @@
-{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
+
 {- |
 Module      : Tarefa3_2021li1g117
 Description : Representação textual do jogo
@@ -50,7 +50,7 @@ linhaString (x : y) = show x : linhaString y
 
 jogadorMapa :: [[String]] -> Jogador -> [[String]]
 jogadorMapa [] _ = []
-jogarMapa (x : y) (Jogador (a , b) c d)
+jogadorMapa (x : y) (Jogador (a , b) c d)
   | b == 0 = (jogadorLinha x (Jogador (a , b) c d)) : y
   | otherwise = x : jogadorMapa y (Jogador (a , b - 1) c d)
 
