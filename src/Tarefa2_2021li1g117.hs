@@ -23,8 +23,7 @@ constroiMapa ((x , (y , z)) : a) = constroiMapaAux ((x , (y , z)) : a)
 constroiMapaAux :: [(Peca,Coordenadas)] -> Mapa
 constroiMapaAux [] = []
 constroiMapaAux ((x , (y , z)) : a) 
-  | b >= 0 = constroiMapaAux ((x , (y , z)) : a) ++ 
-    [listaPecas (compararCoordenadas  (vaziosParaComparar (xMaximo ((x , (y , z)) : a) 0) (yMaximo ((x , (y , z)) : a) 0)) (linhaPorNumero (ordenarCoordenadas ((x , (y , z)) : a)) (yMaximo ((x , (y , z)) : a) 0)))]
+  | (yMaximo ((x , (y , z)) : a) 0) >= 0 = constroiMapaAux ((x , (y , z)) : a) ++ [listaPecas (compararCoordenadas  (vaziosParaComparar ((x , (y , z)) : a) ) (linhaPorNumero ((x , (y , z)) : a))) ]
   | otherwise = []
 
 
@@ -49,15 +48,22 @@ ordenarCoordenadas ((x , (y , z)) : a) = sortBy (compare `on` snd) ((x , (y , z)
 
 --linhaPorNumero cria as linhas 1 a 1 
 
+linhaPorNumero :: [(Peca,Coordenadas)] -> [(Peca,Coordenadas)]
+linhaPorNumero ((x , (y , z)) : a) = linhaPorNumeroAux (ordenarCoordenadas ((x , (y , z)) : a)) (yMaximo ((x , (y , z)) : a) 0)
 
-linhaPorNumero :: [(Peca,Coordenadas)] -> Int -> [(Peca,Coordenadas)]
-linhaPorNumero [] b = []
-linhaPorNumero ((x,(y,z)):a) b = if b == z then ordenarCoordenadas ((x,(y,z)) : linhaPorNumero a b) else ordenarCoordenadas (linhaPorNumero a b)
+linhaPorNumeroAux :: [(Peca,Coordenadas)] -> Int -> [(Peca,Coordenadas)]
+linhaPorNumeroAux [] b = []
+linhaPorNumeroAux ((x,(y,z)):a) b = if b == z then ordenarCoordenadas ((x,(y,z)) : linhaPorNumeroAux a b) else ordenarCoordenadas (linhaPorNumeroAux a b)
 
-vaziosParaComparar :: Int -> Int -> [(Peca,Coordenadas)]
-vaziosParaComparar 0 0 = [(Vazio , (0,0))]
-vaziosParaComparar 0 y = ordenarCoordenadas((Vazio, (0 , y)) : (vaziosParaComparar 0 (y - 1)))
-vaziosParaComparar x y = ordenarCoordenadas((Vazio, (x , y)) : (vaziosParaComparar (x - 1) y ))
+--cria lista de vazios
+
+vaziosParaComparar :: [(Peca,Coordenadas)] -> [(Peca,Coordenadas)]
+vaziosParaComparar ((x , (y , z)) : a) = vaziosParaCompararAux (xMaximo ((x , (y , z)) : a) 0) (yMaximo ((x , (y , z)) : a) 0)
+
+vaziosParaCompararAux :: Int -> Int -> [(Peca,Coordenadas)]
+vaziosParaCompararAux 0 0 = [(Vazio , (0,0))]
+vaziosParaCompararAux 0 y = ordenarCoordenadas((Vazio, (0 , y)) : (vaziosParaCompararAux 0 (y - 1)))
+vaziosParaCompararAux x y = ordenarCoordenadas((Vazio, (x , y)) : (vaziosParaCompararAux (x - 1) y ))
 
 
 compararCoordenadas :: [(Peca,Coordenadas)] -> [(Peca,Coordenadas)] -> [(Peca,Coordenadas)]
