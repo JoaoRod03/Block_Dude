@@ -75,11 +75,11 @@ main = do
               (FundoFinal, fundoFinal), 
               (JogadorEste, jogadorEste), 
               (JogadorOeste, jogadorOeste)]
-     let começo = (MenuInicial Jogar, i)
+     let comeco = (MenuInicial Jogar, i)
      play dm
          (greyN 0.5)
          fr
-         começo
+         comeco
          mundoPicture
          reageEvento
          reageTempo
