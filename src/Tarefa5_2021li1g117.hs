@@ -45,10 +45,12 @@ data Elementos = Blocos
                 | JogadorOeste 
                     deriving Eq
 
+--display
 
 dm :: Display
 dm = InWindow "BlockDude" (1000 , 800) (0 , 0) 
 
+--framerate
 
 fr :: Int
 fr = 50
@@ -64,7 +66,15 @@ main = do
      fundoInicial <- loadBMP "Imagensbmp/fundoInicial.bmp"
      fundoJogo <- loadBMP "Imagensbmp/fundoJogo.bmp"
      fundoFinal <- loadBMP "Imagensbmp/fundoFinal.bmp"
-     let i = [(Blocos, bloco) , (Vazios, vazio) , (Caixas, caixa), (Portas, porta), (FundoInicial, fundoInicial), (FundoJogo, fundoJogo), (FundoFinal, fundoFinal), (JogadorEste, jogadorEste), (JogadorOeste, jogadorOeste)]
+     let i = [(Blocos, bloco), 
+              (Vazios, vazio), 
+              (Caixas, caixa), 
+              (Portas, porta), 
+              (FundoInicial, fundoInicial), 
+              (FundoJogo, fundoJogo), 
+              (FundoFinal, fundoFinal), 
+              (JogadorEste, jogadorEste), 
+              (JogadorOeste, jogadorOeste)]
      let começo = (MenuInicial Jogar, i)
      play dm
          (greyN 0.5)
@@ -74,22 +84,20 @@ main = do
          reageEvento
          reageTempo
 
+--reage às ordens dadas pelas teclas
 
 reageEvento :: Event -> Mundo -> Mundo
 reageEvento (EventKey (SpecialKey KeyDown) Down _ _) (MenuInicial _, i) = (MenuInicial Jogar, i)
 reageEvento (EventKey (SpecialKey KeyEnter) Down _ _) (MenuInicial Jogar, i) = (MenuJogo (Jogo mapaNivel (Jogador (8,6) Oeste False)), i)
-reageEvento (EventKey (SpecialKey KeyUp) Down _ _) (MenuJogo (Jogo l (Jogador (a,b) c d)), i) =
-    if verificarChegada  (moveJogador (Jogo l (Jogador (a,b) c d)) Trepar) (coordenadasPorta l)
-    then (MenuFinal Sair, i)
-    else (MenuJogo (moveJogador (Jogo l (Jogador (a,b) c d)) Trepar), i)
-reageEvento (EventKey (SpecialKey KeyLeft) Down _ _) (MenuJogo (Jogo l (Jogador (a,b) c d)), i) =
-    if verificarChegada (moveJogador (Jogo l (Jogador (a,b) c d)) AndarEsquerda) (coordenadasPorta l)
-    then (MenuFinal Sair, i)
-    else (MenuJogo (moveJogador (Jogo l (Jogador (a,b) c d)) AndarEsquerda), i)
-reageEvento (EventKey (SpecialKey KeyRight) Down _ _) (MenuJogo (Jogo l (Jogador (a,b) c d)), i) =
-    if verificarChegada (moveJogador (Jogo l (Jogador (a,b) c d)) AndarDireita) (coordenadasPorta l)
-    then (MenuFinal Sair, i)
-    else (MenuJogo (moveJogador (Jogo l (Jogador (a,b) c d)) AndarDireita), i)
+reageEvento (EventKey (SpecialKey KeyUp) Down _ _) (MenuJogo (Jogo l (Jogador (a,b) c d)), i) 
+    | verificarChegada  (moveJogador (Jogo l (Jogador (a,b) c d)) Trepar) (coordenadasPorta l) = (MenuFinal Sair, i)
+    | otherwise = (MenuJogo (moveJogador (Jogo l (Jogador (a,b) c d)) Trepar), i)
+reageEvento (EventKey (SpecialKey KeyLeft) Down _ _) (MenuJogo (Jogo l (Jogador (a,b) c d)), i)
+    | verificarChegada (moveJogador (Jogo l (Jogador (a,b) c d)) AndarEsquerda) (coordenadasPorta l) = (MenuFinal Sair, i)
+    | otherwise = (MenuJogo (moveJogador (Jogo l (Jogador (a,b) c d)) AndarEsquerda), i)
+reageEvento (EventKey (SpecialKey KeyRight) Down _ _) (MenuJogo (Jogo l (Jogador (a,b) c d)), i) 
+    | verificarChegada (moveJogador (Jogo l (Jogador (a,b) c d)) AndarDireita) (coordenadasPorta l) = (MenuFinal Sair, i)
+    | otherwise = (MenuJogo (moveJogador (Jogo l (Jogador (a,b) c d)) AndarDireita), i)
 reageEvento (EventKey (SpecialKey KeyDown) Down _ _) (MenuJogo (Jogo l (Jogador (a,b) c d)), i) =
     (MenuJogo (moveJogador (Jogo l (Jogador (a,b) c d)) InterageCaixa), i)
 reageEvento (EventKey (SpecialKey KeyEnter) Down _ _) (MenuFinal Sair, i) =
@@ -117,8 +125,10 @@ verificarChegada (Jogo l (Jogador (a,b) c d))  (x , y)
 mundoPicture :: Mundo -> Picture
 mundoPicture (MenuInicial Jogar, i) = fromJust (lookup FundoInicial i)
 mundoPicture (MenuFinal Sair, i) = fromJust (lookup FundoFinal i)
-mundoPicture ((MenuJogo (Jogo mapa (Jogador (a,b) c d))) , i) =
-    Pictures ([fromJust (lookup FundoJogo i)] ++ (mapaPicture mapa (0 , 0) i) ++ (jogadorPicture mapa (0 , 0) (Jogador (a,b) c d) i))
+mundoPicture ((MenuJogo (Jogo l (Jogador (a,b) c d))) , i) =
+    Pictures ([fromJust (lookup FundoJogo i)] 
+                ++ (mapaPicture l (0 , 0) i) 
+                ++ (jogadorPicture l (0 , 0) (Jogador (a,b) c d) i))
 
 --cria o mapa de Pictures 
 
@@ -166,9 +176,9 @@ jogadorPictureAux (_ : t) (x , y) (Jogador (a,b) c d) i
             where  q = (tilesize * (fromIntegral x))
                    w = negate (tilesize * (fromIntegral y))
 
-
 ------------------------
 
 
 reageTempo :: Float -> Mundo -> Mundo
 reageTempo a b = b
+
