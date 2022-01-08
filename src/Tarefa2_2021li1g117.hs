@@ -1,5 +1,4 @@
-{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-{-# OPTIONS_GHC -Wno-deferred-out-of-scope-variables #-}
+
 {- |
 Module      : Tarefa2_2021li1g117
 Description : Construção/Desconstrução do mapa
