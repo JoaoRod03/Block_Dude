@@ -180,5 +180,5 @@ jogadorPictureAux (_ : t) (x , y) (Jogador (a,b) c d) i
 
 
 reageTempo :: Float -> Mundo -> Mundo
-reageTempo a b = b
+reageTempo a b = b 
 
