@@ -9,7 +9,7 @@ Módulo para a realização da Tarefa 3 do projeto de LI1 em 2021/22.
 module Tarefa3_2021li1g117 where
 
 import LI12122
-import Data.Time.Format.ISO8601 (yearFormat)
+
 
 instance Show Jogo where
   show = jogoFinal
