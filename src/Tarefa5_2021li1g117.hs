@@ -79,7 +79,7 @@ main = do
      play dm
          (greyN 0.5)
          fr
-         comeco
+         comeco 
          mundoPicture
          reageEvento
          reageTempo
@@ -104,6 +104,8 @@ reageEvento (EventKey (SpecialKey KeyEnter) Down _ _) (MenuFinal Sair, i) =
     (MenuInicial Jogar, i)
 reageEvento _ l = l
 
+--dá as coordenadas da porta para posteriormente verificar se o jogador chegou à porta
+
 coordenadasPorta :: Mapa -> Coordenadas
 coordenadasPorta l = coordenadasPortaAux (desconstroiMapa l)
 
@@ -120,7 +122,7 @@ verificarChegada (Jogo l (Jogador (a,b) c d))  (x , y)
 
 ----------------------------
 
---atribui Pictures ao mundo
+--atribui Pictures aos elementos no mundo
 
 mundoPicture :: Mundo -> Picture
 mundoPicture (MenuInicial Jogar, i) = fromJust (lookup FundoInicial i)
@@ -130,11 +132,12 @@ mundoPicture ((MenuJogo (Jogo l (Jogador (a,b) c d))) , i) =
                 ++ (mapaPicture l (0 , 0) i) 
                 ++ (jogadorPicture l (0 , 0) (Jogador (a,b) c d) i))
 
---cria o mapa de Pictures 
+--cria o mapa de Pictures sem o jogador
 
 mapaPicture :: Mapa -> (Int,Int) -> [(Elementos, Picture )] -> [Picture]
 mapaPicture [] _ _ = []
-mapaPicture (x : y) (a , b) i = mapaPictureAux x (a , b) i ++ mapaPicture y (0,b + 1) i
+mapaPicture (x : y) (a , b) i = mapaPictureAux x (a , b) i 
+                                ++ mapaPicture y (0,b + 1) i
 
 mapaPictureAux :: [Peca] -> (Int,Int) -> [(Elementos, Picture )] -> [Picture]
 mapaPictureAux [] _ _ = []
@@ -155,11 +158,12 @@ tilesize :: Float
 tilesize = 30
 
 
---desenha o jogador
+--atribui Picture ao Jogador para depois colocá-lo no mapa
 
 jogadorPicture :: Mapa -> (Int,Int) -> Jogador  -> [(Elementos, Picture)] -> [Picture]
 jogadorPicture [] _ _ _ = []
-jogadorPicture (q:e) (x,y) (Jogador (a,b) c d) i = jogadorPictureAux q (x,y) (Jogador (a,b) c d) i ++ jogadorPicture e (x,y+1) (Jogador (a,b) c d) i
+jogadorPicture (q : e) (x , y) (Jogador (a , b) c d) i = jogadorPictureAux q (x , y) (Jogador (a , b) c d) i 
+                                                         ++ jogadorPicture e (x , y + 1) (Jogador (a,b) c d) i
 
 jogadorPictureAux :: [Peca] -> (Int,Int) -> Jogador -> [(Elementos, Picture)] -> [Picture]
 jogadorPictureAux [] _ _  _= []
