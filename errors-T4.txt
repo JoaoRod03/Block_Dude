@@ -1,0 +1,151 @@
+### Error in:   0:0:Movimento Trepar no Jogo 01
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:1:Movimento Trepar no Jogo 02
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:2:Movimento Trepar Porta
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:3:Movimento Trepar para cima bloco
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:4:Movimento Trepar para Este contra parede
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:5:Movimento Trepar para Este com caixa
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:6:Movimento Trepar para Oeste para cima de Caixa
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:7:Movimento Trepar para Este para cima de Caixa
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:8:Movimento Trepar para Oeste para cima de Caixa com Caixa
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:9:Movimento Trepar para Este para cima de Caixa com Caixa
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:10:Movimento Trepar para Oeste com Caixa bloqueda por bloco
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:11:Movimento Trepar para Oeste para entre blocos
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:12:Movimento AndarEsquerda bloqueado pela caixa contra bloco
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:13:Movimento AndarEsquerda no Jogo 03
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:14:Movimento AndarEsquerda para cima caixa
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:15:Movimento AndarEsquerda para cima caixa com caixa
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:16:Movimento AndarEsquerda de um muro
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:17:Movimento AndarDireita no Jogo 03
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:18:Movimento AndarDireita no Jogo 04
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:19:Movimento AndarDireita no Jogo 06
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:20:Movimento AndarDireita descer de Caixa com Caixa
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa4_2021li1g117.hs:13:30 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa4_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:21:Movimento AndarDireita contra bloco
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at librar

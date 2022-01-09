@@ -1,0 +1,64 @@
+### Error in:   0:0:Show Jogo 01
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa3_2021li1g117.hs:14:10 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa3_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:1:Show Jogo 02
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa3_2021li1g117.hs:14:10 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa3_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:2:Show Jogo 03
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa3_2021li1g117.hs:14:10 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa3_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:3:Show Jogo 04
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa3_2021li1g117.hs:14:10 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa3_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:4:Show Jogo 04
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa3_2021li1g117.hs:14:10 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa3_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:5:Show Jogo 05
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa3_2021li1g117.hs:14:10 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa3_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:6:Show Jogo 06
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa3_2021li1g117.hs:14:10 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa3_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:7:Show Jogo 07
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa3_2021li1g117.hs:14:10 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa3_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+### Error in:   0:8:Show Jogo 08
+Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:75:14 in base:GHC.Err
+  undefined, called at src/Tarefa3_2021li1g117.hs:14:10 in 2021li1g117-0.1.0.0-FHefRRgFwpFKrsk6VcroZj:Tarefa3_2021li1g117
+CallStack (from HasCallStack):
+  error, called at tests/Fase1.hs:27:29 in main:Main
+Cases: 9  Tried: 9  Errors: 9  Failures: 0
