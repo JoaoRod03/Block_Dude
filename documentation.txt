@@ -1,0 +1,90 @@
+2021li1g117-0.1.0.0: unregistering (local file changes: 2021li1g117.cabal src/LI12122.hs src/Tarefa1_2021li1g117.hs src/Tarefa2_2021li1g117.hs src/Tarefa...)
+2021li1g117> configure (lib)
+Configuring 2021li1g117-0.1.0.0...
+2021li1g117> build (lib)
+Preprocessing library for 2021li1g117-0.1.0.0..
+Building library for 2021li1g117-0.1.0.0..
+[1 of 5] Compiling LI12122
+[2 of 5] Compiling Tarefa1_2021li1g117
+[3 of 5] Compiling Tarefa2_2021li1g117
+[4 of 5] Compiling Tarefa3_2021li1g117
+[5 of 5] Compiling Tarefa4_2021li1g117
+2021li1g117> haddock
+Preprocessing library for 2021li1g117-0.1.0.0..
+Running Haddock on library for 2021li1g117-0.1.0.0..
+Haddock coverage:
+  92% ( 11 / 12) in 'LI12122'
+  Missing documentation for:
+    Mapa (src/LI12122.hs:28)
+   8% (  1 / 12) in 'Tarefa1_2021li1g117'
+  Missing documentation for:
+    validaPotencialMapa (src/Tarefa1_2021li1g117.hs:16)
+    validaUmaPosicao (src/Tarefa1_2021li1g117.hs:27)
+    validaUmaPorta (src/Tarefa1_2021li1g117.hs:36)
+    portas (src/Tarefa1_2021li1g117.hs:42)
+    validaCaixa (src/Tarefa1_2021li1g117.hs:51)
+    validaVazios (src/Tarefa1_2021li1g117.hs:62)
+    quantosVazios (src/Tarefa1_2021li1g117.hs:68)
+    caixasBlocosPortas (src/Tarefa1_2021li1g117.hs:72)
+    xMaximo (src/Tarefa1_2021li1g117.hs:79)
+    yMaximo (src/Tarefa1_2021li1g117.hs:85)
+    validaChao (src/Tarefa1_2021li1g117.hs:96)
+   8% (  1 / 13) in 'Tarefa2_2021li1g117'
+  Missing documentation for:
+    constroiMapa (src/Tarefa2_2021li1g117.hs:18)
+    constroiMapaAux (src/Tarefa2_2021li1g117.hs:22)
+    desconstroiMapa (src/Tarefa2_2021li1g117.hs:29)
+    desconstroiMapaAux (src/Tarefa2_2021li1g117.hs:33)
+    listaPecas (src/Tarefa2_2021li1g117.hs:39)
+    ordenarCoordenadas (src/Tarefa2_2021li1g117.hs:43)
+    linhaPorNumero (src/Tarefa2_2021li1g117.hs:50)
+    linhaPorNumeroAux (src/Tarefa2_2021li1g117.hs:53)
+    vaziosParaComparar (src/Tarefa2_2021li1g117.hs:59)
+    vaziosParaCompararAux (src/Tarefa2_2021li1g117.hs:62)
+    compararCoordenadas (src/Tarefa2_2021li1g117.hs:68)
+    desconstroiLinha (src/Tarefa2_2021li1g117.hs:80)
+   8% (  1 / 12) in 'Tarefa3_2021li1g117'
+  Missing documentation for:
+    jogoFinal (src/Tarefa3_2021li1g117.hs:17)
+    jogoFinalAux (src/Tarefa3_2021li1g117.hs:20)
+    stringLetra (src/Tarefa3_2021li1g117.hs:25)
+    juntarStrings (src/Tarefa3_2021li1g117.hs:35)
+    mapaString (src/Tarefa3_2021li1g117.hs:41)
+    linhaString (src/Tarefa3_2021li1g117.hs:45)
+    jogadorMapa (src/Tarefa3_2021li1g117.hs:51)
+    jogadorLinha (src/Tarefa3_2021li1g117.hs:57)
+    existeCaixa (src/Tarefa3_2021li1g117.hs:68)
+    caixaMapa (src/Tarefa3_2021li1g117.hs:74)
+    caixaLinha (src/Tarefa3_2021li1g117.hs:80)
+   5% (  1 / 19) in 'Tarefa4_2021li1g117'
+  Missing documentation for:
+    correrMovimentos (src/Tarefa4_2021li1g117.hs:16)
+    moveJogador (src/Tarefa4_2021li1g117.hs:23)
+    cairJogador (src/Tarefa4_2021li1g117.hs:31)
+    andarEsquerda (src/Tarefa4_2021li1g117.hs:38)
+    andarEsquerdaAux (src/Tarefa4_2021li1g117.hs:41)
+    andarDireita (src/Tarefa4_2021li1g117.hs:54)
+    andarDireitaAux (src/Tarefa4_2021li1g117.hs:57)
+    treparPeca (src/Tarefa4_2021li1g117.hs:70)
+    treparPecaVazio (src/Tarefa4_2021li1g117.hs:75)
+    treparPecaCaixa (src/Tarefa4_2021li1g117.hs:86)
+    interagirCaixa (src/Tarefa4_2021li1g117.hs:101)
+    pegarCaixa (src/Tarefa4_2021li1g117.hs:106)
+    tirarCaixaEste (src/Tarefa4_2021li1g117.hs:119)
+    tirarCaixaOeste (src/Tarefa4_2021li1g117.hs:128)
+    cairCaixa (src/Tarefa4_2021li1g117.hs:137)
+    largarCaixa (src/Tarefa4_2021li1g117.hs:144)
+    largarCaixaEste (src/Tarefa4_2021li1g117.hs:149)
+    largarCaixaOeste (src/Tarefa4_2021li1g117.hs:159)
+Documentation created:
+.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.4.0.0/doc/html/2021li1g117/index.html,
+.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.4.0.0/doc/html/2021li1g117/2021li1g117.txt
+2021li1g117> copy/register
+Installing library in /home/nelson/Documents/LI1/projectos/2021li1g117/.stack-work/install/x86_64-linux-tinfo6/e619e721cfd93d212e783f07e0e112de47ec2ce9746d976e44e04c843f2a0455/9.0.1/lib/x86_64-linux-ghc-9.0.1/2021li1g117-0.1.0.0-7Hbq7KW1lwxGtLQ2StFfeU
+Registering library for 2021li1g117-0.1.0.0..
+Updating Haddock index for local packages in
+/home/nelson/Documents/LI1/projectos/2021li1g117/.stack-work/install/x86_64-linux-tinfo6/e619e721cfd93d212e783f07e0e112de47ec2ce9746d976e44e04c843f2a0455/9.0.1/doc/index.html
+Updating Haddock index for local packages and dependencies in
+/home/nelson/Documents/LI1/projectos/2021li1g117/.stack-work/install/x86_64-linux-tinfo6/e619e721cfd93d212e783f07e0e112de47ec2ce9746d976e44e04c843f2a0455/9.0.1/doc/all/index.html
+Haddock index for snapshot packages already up to date at:
+/home/nelson/.stack/snapshots/x86_64-linux-tinfo6/e619e721cfd93d212e783f07e0e112de47ec2ce9746d976e44e04c843f2a0455/9.0.1/doc/index.html

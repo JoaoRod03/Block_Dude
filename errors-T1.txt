@@ -1,0 +1,13 @@
+### Failure in: 0:0:Valida Mapa 01
+tests/Fase1.hs:34
+expected: True
+ but got: False
+### Failure in: 0:15:"Invalido 02: n\227o tem caminho"
+tests/Fase1.hs:34
+expected: False
+ but got: True
+### Failure in: 0:17:"Invalido 04: n\227o tem caminho"
+tests/Fase1.hs:34
+expected: False
+ but got: True
+Cases: 22  Tried: 22  Errors: 0  Failures: 3
