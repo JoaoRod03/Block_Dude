@@ -14,11 +14,11 @@ import LI12122
 instance Show Jogo where
   show = jogoFinal
 
-jogoFinal :: Jogo -> String 
+jogoFinal :: Jogo -> String
 jogoFinal (Jogo l (Jogador (a , b) c d)) = jogoFinalAux l (Jogador (a , b) c d)
 
 jogoFinalAux :: Mapa -> Jogador -> String
-jogoFinalAux l (Jogador (a , b) c d) = juntarStrings (map stringLetra (existeCaixa (jogadorMapa (mapaString l) (Jogador (a , b) c d)) (Jogador (a , b) c d)) )
+jogoFinalAux l (Jogador (a , b) c d) = init $ juntarStrings (map stringLetra (existeCaixa (jogadorMapa (mapaString l) (Jogador (a , b) c d)) (Jogador (a , b) c d)) )
 
 -- Passar tudo para os caracteres pretendidos
 
@@ -36,7 +36,7 @@ juntarStrings :: [String] -> String
 juntarStrings [] = ""
 juntarStrings (x : y) = x ++ "\n" ++ juntarStrings y
 
--- Passar o mapa todo para String 
+-- Passar o mapa todo para String
 
 mapaString :: Mapa -> [[String]]
 mapaString [] = []
@@ -57,9 +57,9 @@ jogadorMapa (x : y) (Jogador (a , b) c d)
 jogadorLinha :: [String] -> Jogador -> [String]
 jogadorLinha [] _ = []
 jogadorLinha (x : y) (Jogador (a , b) c d)
-  | a == 0 = 
-    if c == Este 
-    then "JogadorEste" : y 
+  | a == 0 =
+    if c == Este
+    then "JogadorEste" : y
     else "JogadorOeste" : y
   | otherwise = x : jogadorLinha y (Jogador (a - 1 , b) c d)
 

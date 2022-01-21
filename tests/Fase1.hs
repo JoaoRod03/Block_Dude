@@ -404,30 +404,30 @@ testsT4 =
     ]
 
 main = do
-  fileT1 <- openFile "errors-T1.txt" WriteMode
-  (countT1, out2) <- runTestText (putTextToHandle fileT1 False) $ TestList [testsT1]
-  -- countT1 <- runTestTT $ TestList [testsT1]
-  writeFile "results-T1.txt" (show countT1)
+  -- fileT1 <- openFile "errors-T1.txt" WriteMode
+  -- (countT1, out2) <- runTestText (putTextToHandle fileT1 False) $ TestList [testsT1]
+  -- -- countT1 <- runTestTT $ TestList [testsT1]
+  -- writeFile "results-T1.txt" (show countT1)
 
-  fileT2 <- openFile "errors-T2.txt" WriteMode
-  (countT2, out2) <- runTestText (putTextToHandle fileT2 False) $ TestList [testsT2]
-  -- countT2 <- runTestTT $ TestList [testsT2]
-  writeFile "results-T2.txt" (show countT2)
+  -- fileT2 <- openFile "errors-T2.txt" WriteMode
+  -- (countT2, out2) <- runTestText (putTextToHandle fileT2 False) $ TestList [testsT2]
+  -- -- countT2 <- runTestTT $ TestList [testsT2]
+  -- writeFile "results-T2.txt" (show countT2)
 
   fileT3 <- openFile "errors-T3.txt" WriteMode
   (countT3, out3) <- runTestText (putTextToHandle fileT3 False) $ TestList [testsT3]
   -- countT3 <- runTestTT $ TestList [testsT3]
   writeFile "results-T3.txt" (show countT3)
 
-  fileT4 <- openFile "errors-T4.txt" WriteMode
-  (countT4, out4) <- runTestText (putTextToHandle fileT4 False) $ TestList [testsT4]
-  -- countT4 <- runTestTT $ TestList [testsT4]
-  writeFile "results-T4.txt" (show countT4)
+  -- fileT4 <- openFile "errors-T4.txt" WriteMode
+  -- (countT4, out4) <- runTestText (putTextToHandle fileT4 False) $ TestList [testsT4]
+  -- -- countT4 <- runTestTT $ TestList [testsT4]
+  -- writeFile "results-T4.txt" (show countT4)
 
-  file <- openFile "errors.txt" WriteMode
-  (count, out) <- runTestText (putTextToHandle file False) $ TestList [testsT1, testsT2, testsT3, testsT4]
-  -- count <- runTestTT $ TestList [testsT1, testsT2, testsT3, testsT4]
-  writeFile "results.txt" (show count)
+  -- file <- openFile "errors.txt" WriteMode
+  -- (count, out) <- runTestText (putTextToHandle file False) $ TestList [testsT1, testsT2, testsT3, testsT4]
+  -- -- count <- runTestTT $ TestList [testsT1, testsT2, testsT3, testsT4]
+  -- writeFile "results.txt" (show count)
 
-  when (failures count > 0) Exit.exitFailure
+  -- when (failures count > 0) Exit.exitFailure
 
